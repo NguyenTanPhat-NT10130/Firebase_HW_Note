@@ -1,0 +1,19 @@
+<nb-layout>
+
+  <nb-layout-header>
+    <h1>MY BLOOGER WORD</h1>
+    <span style="flex:1 auto ;font-size: 1.5 rem;" ></span>
+    <button nbButton status="info" style="float:right ;size: small;">LOGIN</button>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    
+<router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer >
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+  <nb-sidebar><nb-menu [items]="items"></nb-menu></nb-sidebar>
+
+</nb-layout>

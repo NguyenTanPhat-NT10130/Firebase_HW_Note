@@ -1,0 +1,17 @@
+
+<nb-card *ngFor="let articles of articles">
+    <nb-card-header>
+        <div><img src="{{articles.cover_image}}"></div>
+        {{articles.title}}
+        <nb-tag>{{articles.tags}}</nb-tag> 
+    </nb-card-header>
+    <nb-card-body>
+        <nb-user name="{{articles.user.name}}" title="Posted on {{articles.readable_publish_date}}" picture="{{articles.user.profile_image_90}}"></nb-user>
+        
+       {{articles.description}}
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton status="info" (click)="toLink(articles.canonical_url)">Read More</button>
+        
+    </nb-card-footer>
+</nb-card>

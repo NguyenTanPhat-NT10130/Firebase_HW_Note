@@ -1,0 +1,59 @@
+
+<div  style="width: 100%; display:flex;flex-direction: row;justify-content: space-between;">
+  <mat-toolbar style="background-color: red;">
+    <h1>DeveloperBlog</h1>
+    <span style="flex:1 auto ;font-size: 1.5 rem;" ></span>
+    <button mat-flat-button style="float: right;width: 5rem; color:whitesmoke;background-color: rgb(231, 18, 221);">LOGIN</button> 
+  </mat-toolbar>
+</div>
+
+
+ <mat-sidenav-container style="background-color: white ;">
+<p style="margin-left:20px;font-size: 25px;max-height: fit-content;color: grey;"><mat-icon style="color: grey;margin-bottom:15px;">home</mat-icon> Home</p>
+ 
+ <p style="margin-left:20px;font-size: 25px;color: grey"> <mat-icon style="color: grey;">shopping_cart</mat-icon> Shop</p>
+</mat-sidenav-container>
+
+ <mat-sidenav-container class="example-container" style="float:right ;margin-bottom: 500px;background-color: white">
+  <mat-tab-group mat-align-tabs="start" style="background-color: black;">
+    
+    <mat-tab style="color: black;" label="New">
+      <input class="mainLoginInput" type="text" placeholder="Search" style="font-family: FontAwesome, Arial; font-style: normal" style="width: 20%; height: 2.5rem; border-radius: 100px; margin-left: 3%;margin-top: 30px; border-color: gray;">
+      <mat-card class="example-card" *ngFor = "let article of articles$ | async">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{article.title}}</mat-card-title>
+          <mat-card-subtitle>{{article.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{article.cover_image}}">
+        <mat-card-content>
+          <p>{{article.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <span style="float:right ;"></span>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+      
+    <mat-tab label="About"> Content 2 </mat-tab>
+  </mat-tab-group>
+  
+
+  <div style="margin-top: 100px;">  
+    <img style="width:50rem;margin-left: 40px;" mat-card-image src="https://th.bing.com/th/id/OIP.VkSBH-w_0wK2hwgnqDsbqAHaD4?w=305&h=180&c=7&r=0&o=5&pid=1.7" alt="Photo of Develper">
+
+  </div>
+ 
+   <button (click)="loadArticles()" style="margin-top:1.5%;margin-left:2% ;background-color: aqua;"mat-button href="https://www.google.com/" target="_blank">Load articles</button>   
+
+</mat-sidenav-container>
+
+
+
+
+
+
+
+

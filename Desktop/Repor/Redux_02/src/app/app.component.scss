@@ -1,0 +1,17 @@
+.example-container {
+  width: 70rem;
+  height: 200rem;
+  margin: 20px;
+  margin-bottom: 200px;
+  border: 1px solid rgba(214, 213, 213, 0.911);
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    // {{article.social_image}}
+    background-size: cover;
+  }
+  

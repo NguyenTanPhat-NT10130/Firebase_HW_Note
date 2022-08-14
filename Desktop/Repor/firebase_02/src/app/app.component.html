@@ -4,11 +4,11 @@
   </header>
   <div>
     <label for="id">ID</label>
-    <input style="margin-left:21px ;" type="text" name="id" [(ngModel)]="currentNote.id"/>
+    <input style="margin-left:27px ;" type="text" name="id" [(ngModel)]="currentNote.id"/>
     <label for="name">Name</label>
     <input  type="text" name="name" [(ngModel)]="currentNote.name"/>
     <label for="title">Title</label>
-    <input style="margin-left:9px ;"  type="text" name="title" [(ngModel)]="currentNote.title"/>
+    <input style="margin-left:11px ;"  type="text" name="title" [(ngModel)]="currentNote.title"/>
     <label for="age">dayPost</label>
     <input type="date" name="age" [(ngModel)]="currentNote.datePost"/>
   </div>
@@ -24,8 +24,11 @@
       <p>Title: {{note.title}}</p>
       <p>Date: {{note.datePost}}</p>
       <p>Note: {{note.content}}</p>
-      <button (click)="updateNote()">Update</button>
-      <button (click)="deleteNote()">Delete</button>
+      <button mat-raised-button (click)="updateNote()">Update
+        
+      </button>
+      
+      <button (click)="deleteNote(note.id)">Delete</button>
     </div>
   </article>
   </main>

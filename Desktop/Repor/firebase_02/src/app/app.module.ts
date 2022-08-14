@@ -16,10 +16,19 @@ import { noteReducer } from 'src/reducers/note.reducer';
 import {NoteEffects} from '../effects/note.effect'
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
+
+  entryComponents: [DialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +45,10 @@ import { FormsModule } from '@angular/forms';
     provideMessaging(() => getMessaging()),
     provideStorage(() => getStorage()),
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

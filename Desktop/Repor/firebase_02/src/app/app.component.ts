@@ -3,6 +3,9 @@ import { Store } from '@ngrx/store';
 import { NoteState } from 'src/states/note.state';
 import * as NoteActions from 'src/actions/note.action';
 import {Note} from 'src/models/note.model';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +24,7 @@ export class AppComponent implements OnInit {
   datePost: '',
   content:'',
  } 
-  constructor(private store: Store<{note:NoteState}>){}
+  constructor(private store: Store<{note:NoteState}>, private dialog: MatDialog){}
   ngOnInit(): void {
     this.NoteState$.subscribe(state=>{
       console.log(state);
@@ -42,11 +45,24 @@ export class AppComponent implements OnInit {
     this.store.dispatch(NoteActions.addNote({note:this.currentNote}))
   }
   
-  deleteNote(){
-    this.store.dispatch(NoteActions.deleteNote({id: this.currentNote.id}));
+  deleteNote(id: string){
+    this.store.dispatch(NoteActions.deleteNote({id}));
   }
 
+
+
   updateNote(){
+    let dialogRef= this.dialog.open(DialogComponent, {data: {name:'Vishae'}}) 
+    dialogRef.afterClosed().subscribe(result =>{
+      console.log('Dialog result: ${result');
+    });
+    // let note:Note={
+    //   id:'199923', 
+    //   name:'Duc',
+    //   title: 'Hello Phat',
+    //   datePost: '4/5/2022',
+    //   content:'Noi dung sau khi cap nhat',
+    //}
     this.store.dispatch(NoteActions.updateNote({note:this.currentNote}));
   }
 }

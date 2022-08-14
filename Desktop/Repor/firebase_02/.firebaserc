@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simple-note-management": {
+      "hosting": {
+        "firebase_02": [
+          "simple-note-management"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simple-note-management"
+  }
+}

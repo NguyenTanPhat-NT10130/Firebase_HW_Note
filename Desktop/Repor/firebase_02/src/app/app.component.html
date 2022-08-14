@@ -1,0 +1,31 @@
+<main>
+  <header>
+    NoteWeb++
+  </header>
+  <div>
+    <label for="id">ID</label>
+    <input style="margin-left:21px ;" type="text" name="id" [(ngModel)]="currentNote.id"/>
+    <label for="name">Name</label>
+    <input  type="text" name="name" [(ngModel)]="currentNote.name"/>
+    <label for="title">Title</label>
+    <input style="margin-left:9px ;"  type="text" name="title" [(ngModel)]="currentNote.title"/>
+    <label for="age">dayPost</label>
+    <input type="date" name="age" [(ngModel)]="currentNote.datePost"/>
+  </div>
+  <nav style="height: 105px;">
+    <label for="content">Content</label>
+    <input style="height: 100px;" type="text" name="content" placeholder="Text here" [(ngModel)]="currentNote.content"/>
+    
+    <button style="margin-top: 20px; ;" (click)="addNote()">Create Note</button>
+  </nav>
+  <article >
+    <div *ngFor="let note of notes$ | async"  >
+      <p>Name: {{note.name}}</p> 
+      <p>Title: {{note.title}}</p>
+      <p>Date: {{note.datePost}}</p>
+      <p>Note: {{note.content}}</p>
+      <button (click)="updateNote()">Update</button>
+      <button (click)="deleteNote()">Delete</button>
+    </div>
+  </article>
+  </main>
